@@ -14,8 +14,9 @@ public class UserDaoImpl implements UserDao {
     ResultSet rs = null;
     String sql;
     User user = new User();
+
     @Override
-    public int insert(String userName, String userPwd,String userIdentity) {
+    public int insert(String userName, String userPwd, String userIdentity) {
         // TODO Auto-generated method stub
         int k = 1;
         sql = "insert into user_list value(?,?,?)";
@@ -29,22 +30,23 @@ public class UserDaoImpl implements UserDao {
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        }finally {
+        } finally {
             ConnectionUtil.closeRe(con, pt);
         }
         return k;
     }
+
     @Override
     public User selectByName(String userName) {
         // TODO Auto-generated method stub
         sql = "select * from user_list where id = ?";
-        
+
         try {
             con = ConnectionUtil.getConnection();
             pt = con.prepareStatement(sql);
             pt.setString(1, userName);
             rs = pt.executeQuery();
-            while(rs.next()) {
+            while (rs.next()) {
                 user.setUserName(rs.getString("id"));
                 user.setUserPwd(rs.getString("password"));
                 user.setUserIdentity(rs.getString("identity"));
@@ -52,7 +54,7 @@ public class UserDaoImpl implements UserDao {
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        }finally {
+        } finally {
             ConnectionUtil.closeRe(con, pt, rs);
         }
         return user;

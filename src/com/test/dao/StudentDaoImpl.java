@@ -73,7 +73,7 @@ public class StudentDaoImpl implements StudentDao {
     }
 
     @Override
-    public List<Student> queryAllStudent(int cpage,int count) throws SQLException {
+    public List<Student> queryAllStudent(int cpage, int count) throws SQLException {
         List<Student> list = new ArrayList<>();
         Student student;
         String sql = "select sname, swhere, ssex, sstudentid, sid, spolitics, dname, sbirth\n" +
@@ -81,7 +81,7 @@ public class StudentDaoImpl implements StudentDao {
                 "where department_info.did = student_info.did limit ?,?";
         Connection conn = getConnection();
         PreparedStatement pstmt = conn.prepareStatement(sql);
-        pstmt.setInt(1, (cpage-1)*count);
+        pstmt.setInt(1, (cpage - 1) * count);
         pstmt.setInt(2, count);
         ResultSet res = pstmt.executeQuery();
         //从结果集里拿数据
@@ -93,23 +93,23 @@ public class StudentDaoImpl implements StudentDao {
         }
         return list;
     }
-    
-    public  int[] totalpage(int count) throws SQLException {
-    	//0记录数，1页数；
-    	int arr[] = {0,1};
-    	String sql = "select count(*) from student_info";
+
+    public int[] totalpage(int count) throws SQLException {
+        //0记录数，1页数；
+        int arr[] = {0, 1};
+        String sql = "select count(*) from student_info";
         Connection conn = getConnection();
         PreparedStatement pstmt = conn.prepareStatement(sql);
         ResultSet res = pstmt.executeQuery(sql);
-        while(res.next()) {
-        	
-        	arr[0] = res.getInt(1);
-        	if(arr[0]%count==0)
-        		arr[1] = arr[0]/count;
-        	else
-        		arr[1] = arr[0]/count+1;
+        while (res.next()) {
+
+            arr[0] = res.getInt(1);
+            if (arr[0] % count == 0)
+                arr[1] = arr[0] / count;
+            else
+                arr[1] = arr[0] / count + 1;
         }
         conn.close();
-    	return arr;
+        return arr;
     }
 }

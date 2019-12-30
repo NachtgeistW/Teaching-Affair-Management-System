@@ -16,8 +16,8 @@ import com.teacher.model.Teacher;
  */
 @WebServlet("/Teacherselectperson")
 public class Teacherselectperson extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
+    private static final long serialVersionUID = 1L;
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -26,30 +26,30 @@ public class Teacherselectperson extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+    /**
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request, response);
-	}
+        doPost(request, response);
+    }
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+     */
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
-		Teacher teacher = new Teacher();
-		TeacherDao dao = new TeacherImpl();
-		String id = (String)this.getServletContext().getAttribute("id");
-		if(id == null)id = request.getParameter("tid");
-		teacher = dao.selectTeacherDid(id);
-		request.setAttribute("tname",teacher.getTname());
-		request.setAttribute("tid",teacher.getTteacherid());
-		request.setAttribute("did", teacher.getDid());
-		request.setAttribute("title", teacher.getTtitle());
-		request.setAttribute("sex", teacher.getTsex());
-		
-		request.getRequestDispatcher("form-tea-select.jsp").forward(request, response);
-	}
+        Teacher teacher = new Teacher();
+        TeacherDao dao = new TeacherImpl();
+        String id = (String) this.getServletContext().getAttribute("id");
+        if (id == null) id = request.getParameter("tid");
+        teacher = dao.selectTeacherDid(id);
+        request.setAttribute("tname", teacher.getTname());
+        request.setAttribute("tid", teacher.getTteacherid());
+        request.setAttribute("did", teacher.getDid());
+        request.setAttribute("title", teacher.getTtitle());
+        request.setAttribute("sex", teacher.getTsex());
+
+        request.getRequestDispatcher("form-tea-select.jsp").forward(request, response);
+    }
 }
