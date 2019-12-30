@@ -7,8 +7,11 @@ public class Teacher {
     private String title;
     private String department;
     private int departmentId;
-    Teacher(){}
-    public Teacher(String name, String sex, String teacherId, String title, String department){
+
+    Teacher() {
+    }
+
+    public Teacher(String name, String sex, String teacherId, String title, String department) {
         this.name = name;
         this.sex = sex;
         this.teacherId = teacherId;
@@ -16,13 +19,14 @@ public class Teacher {
         this.department = department;
     }
 
-    public Teacher(String name, String sex, String teacherId, String title, int departmentId){
+    public Teacher(String name, String sex, String teacherId, String title, int departmentId) {
         this.name = name;
         this.sex = sex;
         this.teacherId = teacherId;
         this.title = title;
         this.departmentId = departmentId;
     }
+
     public String getName() {
         return name;
     }

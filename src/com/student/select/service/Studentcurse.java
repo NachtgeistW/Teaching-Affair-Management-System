@@ -1,133 +1,135 @@
 package com.student.select.service;
 
 public class Studentcurse {
-	private String sstudentId;
-	private String cId;
-	private String sGrade;
-	private String sTerm;
-	private String cName;
-	private String cKind;
-	private String cTestway;
-	private int    cCredit;
-	private int    cStudentperiod;
-	private String comment;
-	private String cTname;
-	private String teacherid;
-	public Studentcurse() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	
-	public Studentcurse(String sstudentId, String cId, String sGrade, String sTerm, String cName, String cKind,
-			String cTestway, int cCredit, int cStudentperiod, String comment,String cTname,String teacherid) {
-		super();
-		this.sstudentId = sstudentId;
-		this.cId = cId;
-		this.sGrade = sGrade;
-		this.sTerm = sTerm;
-		this.cName = cName;
-		this.cKind = cKind;
-		this.cTestway = cTestway;
-		this.cCredit = cCredit;
-		this.cStudentperiod = cStudentperiod;
-		this.comment = comment;
-		this.cTname = cTname;
-		this.teacherid = teacherid;
-	}
+    private String sstudentId;
+    private String cId;
+    private String sGrade;
+    private String sTerm;
+    private String cName;
+    private String cKind;
+    private String cTestway;
+    private int cCredit;
+    private int cStudentperiod;
+    private String comment;
+    private String cTname;
+    private String teacherid;
 
-	public String getSstudentId() {
-		return sstudentId;
-	}
+    public Studentcurse() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
-	public void setSstudentId(String sstudentId) {
-		this.sstudentId = sstudentId;
-	}
+    public Studentcurse(String sstudentId, String cId, String sGrade, String sTerm, String cName, String cKind,
+                        String cTestway, int cCredit, int cStudentperiod, String comment, String cTname, String teacherid) {
+        super();
+        this.sstudentId = sstudentId;
+        this.cId = cId;
+        this.sGrade = sGrade;
+        this.sTerm = sTerm;
+        this.cName = cName;
+        this.cKind = cKind;
+        this.cTestway = cTestway;
+        this.cCredit = cCredit;
+        this.cStudentperiod = cStudentperiod;
+        this.comment = comment;
+        this.cTname = cTname;
+        this.teacherid = teacherid;
+    }
 
-	public String getcId() {
-		return cId;
-	}
+    public String getSstudentId() {
+        return sstudentId;
+    }
 
-	public void setcId(String cId) {
-		this.cId = cId;
-	}
+    public void setSstudentId(String sstudentId) {
+        this.sstudentId = sstudentId;
+    }
 
-	public String getsGrade() {
-		return sGrade;
-	}
+    public String getcId() {
+        return cId;
+    }
 
-	public void setsGrade(String sGrade) {
-		this.sGrade = sGrade;
-	}
+    public void setcId(String cId) {
+        this.cId = cId;
+    }
 
-	public String getsTerm() {
-		return sTerm;
-	}
+    public String getsGrade() {
+        return sGrade;
+    }
 
-	public void setsTerm(String sTerm) {
-		this.sTerm = sTerm;
-	}
+    public void setsGrade(String sGrade) {
+        this.sGrade = sGrade;
+    }
 
-	public String getcName() {
-		return cName;
-	}
+    public String getsTerm() {
+        return sTerm;
+    }
 
-	public void setcName(String cName) {
-		this.cName = cName;
-	}
+    public void setsTerm(String sTerm) {
+        this.sTerm = sTerm;
+    }
 
-	public String getcKind() {
-		return cKind;
-	}
+    public String getcName() {
+        return cName;
+    }
 
-	public void setcKind(String cKind) {
-		this.cKind = cKind;
-	}
+    public void setcName(String cName) {
+        this.cName = cName;
+    }
 
-	public String getcTestway() {
-		return cTestway;
-	}
+    public String getcKind() {
+        return cKind;
+    }
 
-	public void setcTestway(String cTestway) {
-		this.cTestway = cTestway;
-	}
+    public void setcKind(String cKind) {
+        this.cKind = cKind;
+    }
 
-	public int getcCredit() {
-		return cCredit;
-	}
+    public String getcTestway() {
+        return cTestway;
+    }
 
-	public void setcCredit(int cCredit) {
-		this.cCredit = cCredit;
-	}
+    public void setcTestway(String cTestway) {
+        this.cTestway = cTestway;
+    }
 
-	public int getcStudentperiod() {
-		return cStudentperiod;
-	}
+    public int getcCredit() {
+        return cCredit;
+    }
 
-	public void setcStudentperiod(int cStudentperiod) {
-		this.cStudentperiod = cStudentperiod;
-	}
+    public void setcCredit(int cCredit) {
+        this.cCredit = cCredit;
+    }
 
-	public String getComment() {
-		return comment;
-	}
+    public int getcStudentperiod() {
+        return cStudentperiod;
+    }
 
-	public void setComment(String comment) {
-		this.comment = comment;
-	}
-	public String getcTname() {
-		return cTname;
-	}
+    public void setcStudentperiod(int cStudentperiod) {
+        this.cStudentperiod = cStudentperiod;
+    }
 
-	public void setcTname(String cTname) {
-		this.cTname = cTname;
-	}
+    public String getComment() {
+        return comment;
+    }
 
-	public String getTeacherid() {
-		return teacherid;
-	}
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
 
-	public void setTeacherid(String teacherid) {
-		this.teacherid = teacherid;
-	}
-	
+    public String getcTname() {
+        return cTname;
+    }
+
+    public void setcTname(String cTname) {
+        this.cTname = cTname;
+    }
+
+    public String getTeacherid() {
+        return teacherid;
+    }
+
+    public void setTeacherid(String teacherid) {
+        this.teacherid = teacherid;
+    }
+
 }

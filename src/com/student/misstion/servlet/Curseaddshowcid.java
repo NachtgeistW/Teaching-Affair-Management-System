@@ -18,8 +18,8 @@ import com.student.select.service.StudentcurseDaoImpl;
  */
 @WebServlet("/Curseaddshowcid")
 public class Curseaddshowcid extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
+    private static final long serialVersionUID = 1L;
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -28,27 +28,27 @@ public class Curseaddshowcid extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+    /**
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request, response);
-	}
+        doPost(request, response);
+    }
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+     */
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
-        String id = (String)this.getServletContext().getAttribute("id");
-        if(id == null)id = request.getParameter("sid");
+        String id = (String) this.getServletContext().getAttribute("id");
+        if (id == null) id = request.getParameter("sid");
         ArrayList<Studentcurse> list = new ArrayList<Studentcurse>();
         StudentcurseDao dao = new StudentcurseDaoImpl();
         list = dao.getCurseIdList(id);
         request.setAttribute("curseidlist", list);
         request.setAttribute("sid", id);
         request.getRequestDispatcher("stu-misstion-add.jsp").forward(request, response);
-	}
+    }
 
 }

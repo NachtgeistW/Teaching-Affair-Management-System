@@ -22,15 +22,15 @@ public class StatisticDepartmentAvgGradeServlet extends HttpServlet {
         StatisticDaoImpl impl = new StatisticDaoImpl();
         int cpage = 1;//当前页
         int count = 5;//每页显示条数
-        
+
         //获取用户指定的页面
         String cp = request.getParameter("cp");
-        if(cp!=null) {
-        	cpage = Integer.parseInt(cp);
+        if (cp != null) {
+            cpage = Integer.parseInt(cp);
         }
         try {
-            List<Statistic> list = impl.StatisticDepartmentAvgGrade(cpage,count);
-            int arr[] = impl.totalpage(count,4);
+            List<Statistic> list = impl.StatisticDepartmentAvgGrade(cpage, count);
+            int arr[] = impl.totalpage(count, 4);
             request.setAttribute("tsum", arr[0]);
             request.setAttribute("tpage", arr[1]);
             request.setAttribute("cpage", cpage);

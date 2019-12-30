@@ -19,7 +19,7 @@ import com.maike.service.UserServiceImpl;
 public class RegisterServlet extends HttpServlet {
     UserService userService = new UserServiceImpl();
     private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -46,16 +46,16 @@ public class RegisterServlet extends HttpServlet {
         String userPwd = request.getParameter("userPwd");
         String userRePwd = request.getParameter("userRePwd");
         String userIdentity = request.getParameter("identity").toString();
-        int k = userService.insertUser(userName,userPwd,userRePwd,userIdentity);
-        if(k > 0) {
+        int k = userService.insertUser(userName, userPwd, userRePwd, userIdentity);
+        if (k > 0) {
             request.getRequestDispatcher("login.html").forward(request, response);
-        }else {
-        	PrintWriter out = response.getWriter();
-        	out.write("<script>");
-        	out.write("alert('注册失败！');");
-        	out.write("window.location.href='insert.html';");
-        	out.write("</script>");
-        	out.close();
+        } else {
+            PrintWriter out = response.getWriter();
+            out.write("<script>");
+            out.write("alert('注册失败！');");
+            out.write("window.location.href='insert.html';");
+            out.write("</script>");
+            out.close();
         }
     }
 

@@ -6,13 +6,13 @@ public class TeacherQuery {
     private String cterm;
     private double avg;
     private int count;
-    
-    public TeacherQuery() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 
-	public TeacherQuery(String cid, String cname, String cterm, int count) {
+    public TeacherQuery() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+    public TeacherQuery(String cid, String cname, String cterm, int count) {
         this.cid = cid;
         this.cname = cname;
         this.cterm = cterm;
