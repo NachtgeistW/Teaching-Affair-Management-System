@@ -6,7 +6,7 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>course_info</title>
+		<title>课程档案</title>
 		<meta name="renderer" content="webkit">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -17,7 +17,7 @@
 	<body>
 		<div style="margin: 15px;">
 			<blockquote class="layui-elem-quote">
-				course_info
+				课程档案
 			</blockquote>
 			<fieldset class="layui-elem-field">
 				<div class="layui-field-box">

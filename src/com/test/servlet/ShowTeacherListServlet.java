@@ -22,9 +22,21 @@ public class ShowTeacherListServlet extends HttpServlet {
 
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         TeacherDaoImpl impl = new TeacherDaoImpl();
+        int cpage = 1;//当前页
+        int count = 5;//每页显示条数
+        
+        //获取用户指定的页面
+        String cp = request.getParameter("cp");
+        if(cp!=null) {
+        	cpage = Integer.parseInt(cp);
+        }
         try {
-            List<Teacher> list = impl.queryAllTeacher();
+            List<Teacher> list = impl.queryAllTeacher(cpage,count);
+            int arr[] = impl.totalpage(count,1,null);
             request.setAttribute("teacherList", list);
+            request.setAttribute("tsum", arr[0]);
+            request.setAttribute("tpage", arr[1]);
+            request.setAttribute("cpage", cpage);
             request.getRequestDispatcher("admin-select-teacher-list.jsp")
                     .forward(request, response);
         } catch (SQLException e) {

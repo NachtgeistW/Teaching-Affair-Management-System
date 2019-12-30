@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 
@@ -24,29 +23,29 @@
 				<legend>添加--授课信息</legend>
 			</fieldset>
 
-			<form class="layui-form" action="Teacheraddcursesubmit">
+			<form class="layui-form" action="">
+				<div class="layui-form-item">
+					<label class="layui-form-label">课程代号</label>
+					<div class="layui-input-block">
+						<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入课程代号" class="layui-input">
+					</div>
+				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">课程名称</label>
-					<select id="test" name="cid" >
-						<c:forEach var="u" items="${curseidlist}">
-						
-							<option value="${u.cid }">${u.cid }-${u.cname }</option>
-							
-						</c:forEach>
-						
-					</select>
+					<div class="layui-input-block">
+						<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入课程名称" class="layui-input">
+					</div>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">授课时间</label>
 					<div class="layui-input-block">
-						<input type="text" name="cterm" lay-verify="title" autocomplete="off" placeholder="2011-2012-1" class="layui-input">
+						<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入授课老师" class="layui-input">
 					</div>
 				</div>
 				<div class="layui-form-item">
 					<div class="layui-input-block">
 						<button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
 						<button type="reset" class="layui-btn layui-btn-primary">重置</button>
-						<a class="layui-btn" href="javascript:history.go(-1)" lay-filter="back">返回</a>
 					</div>
 				</div>
 			</form>
@@ -54,9 +53,33 @@
 		<script type="text/javascript" src="plugins/layui/layui.js"></script>
 		<script>
 			layui.use(['form', 'layedit', 'laydate'], function() {
-				var form = layui.form();
+				var form = layui.form(),
+					layer = layui.layer,
+					layedit = layui.layedit,
+					laydate = layui.laydate;
 
-				
+				//创建一个编辑器
+				var editIndex = layedit.build('LAY_demo_editor');
+				//自定义验证规则
+				form.verify({
+					title: function(value) {
+						if(value.length < 5) {
+							return '标题至少得5个字符啊';
+						}
+					},
+					pass: [/(.+){6,12}$/, '密码必须6到12位'],
+					content: function(value) {
+						layedit.sync(editIndex);
+					}
+				});
+
+				//监听提交
+				form.on('submit(demo1)', function(data) {
+					layer.alert(JSON.stringify(data.field), {
+						title: '最终的提交信息'
+					})
+					return false;
+				});
 			});
 		</script>
 	</body>

@@ -24,7 +24,25 @@ public class TeacherQueryCourseServlet extends HttpServlet {
         try {
         	String id = (String)this.getServletContext().getAttribute("id");
     		if(id == null)id = request.getParameter("tid");
-            List<TeacherQuery> list = impl.queryCourseList(id);
+    		int cpage = 1;//当前页
+            int count = 5;//每页显示条数
+            
+            //获取用户指定的页面
+            String cp = request.getParameter("cp");
+            if(cp!=null) {
+            	cpage = Integer.parseInt(cp);
+            }
+            List<TeacherQuery> list = impl.queryCourseList(id,cpage,count);
+            int arr[];
+    		try {
+    			arr = impl.totalpage(count,2,id);
+    			request.setAttribute("tsum", arr[0]);
+    	        request.setAttribute("tpage", arr[1]);
+    		} catch (SQLException e) {
+    			// TODO Auto-generated catch block
+    			e.printStackTrace();
+    		}
+            request.setAttribute("cpage", cpage);
             request.setAttribute("result", list);
             request.getRequestDispatcher("tea-misstion.jsp")
                     .forward(request, response);

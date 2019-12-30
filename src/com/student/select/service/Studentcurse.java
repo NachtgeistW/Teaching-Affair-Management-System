@@ -12,13 +12,14 @@ public class Studentcurse {
 	private int    cStudentperiod;
 	private String comment;
 	private String cTname;
+	private String teacherid;
 	public Studentcurse() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
 	public Studentcurse(String sstudentId, String cId, String sGrade, String sTerm, String cName, String cKind,
-			String cTestway, int cCredit, int cStudentperiod, String comment,String cTname) {
+			String cTestway, int cCredit, int cStudentperiod, String comment,String cTname,String teacherid) {
 		super();
 		this.sstudentId = sstudentId;
 		this.cId = cId;
@@ -31,6 +32,7 @@ public class Studentcurse {
 		this.cStudentperiod = cStudentperiod;
 		this.comment = comment;
 		this.cTname = cTname;
+		this.teacherid = teacherid;
 	}
 
 	public String getSstudentId() {
@@ -118,6 +120,14 @@ public class Studentcurse {
 
 	public void setcTname(String cTname) {
 		this.cTname = cTname;
+	}
+
+	public String getTeacherid() {
+		return teacherid;
+	}
+
+	public void setTeacherid(String teacherid) {
+		this.teacherid = teacherid;
 	}
 	
 }

@@ -1,6 +1,7 @@
-package com.course;
+package com.test.servlet;
 
 import com.test.Course;
+import com.test.dao.CourseDao;
 import com.test.dao.CourseDaoImpl;
 
 import javax.servlet.ServletException;
@@ -12,16 +13,16 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 @WebServlet("/EditCourseServlet")
-public class EditCourseServlet extends HttpServlet {
+public class CourseEditServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
-        CourseDaoImpl impl = new CourseDaoImpl();
+        CourseDao dao = new CourseDaoImpl();
         Course course = null;
         String id = (String) this.getServletContext().getAttribute("id");
         if (id == null) id = request.getParameter("cid");
         try {
-            course = impl.queryByCid(id);
+            course = dao.queryByCid(id);
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -8,8 +8,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import com.maike.service.UserService;
 import com.maike.service.UserServiceImpl;
+import com.mysql.cj.Session;
 
 /**
  * Servlet implementation class LoginServlet
@@ -44,19 +47,23 @@ public class LoginServlet extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
         String userName = request.getParameter("userName");
         String uesrPwd = request.getParameter("userPwd");
+        HttpSession session = request.getSession();
         int k = userService.judgeLogin(userName,uesrPwd);
         
 				PrintWriter out=response.getWriter();
 				out.write("<script>");
 				
             if(k == 1) {
+            	session.setAttribute("pass", "1");
             	out.write("window.location.href='index-admin.jsp';");
             }
             if(k == 2) {
+            	session.setAttribute("pass", "1");
             	this.getServletContext().setAttribute("id", userName);
             	out.write("window.location.href='index-teacher.jsp';");
             }
             if(k == 3) {
+            	session.setAttribute("pass", "1");
             	this.getServletContext().setAttribute("id", userName);
             	out.write("window.location.href='index-student.jsp';");
             }

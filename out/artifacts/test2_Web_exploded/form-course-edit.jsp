@@ -12,7 +12,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>个人信息</title>
+    <title>课程信息</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -30,7 +30,14 @@
         <legend>修改--课程信息</legend>
     </fieldset>
 
-    <form class="layui-form" action="editsubmit">
+    <form class="layui-form" action="EditCourseSubmitServlet">
+        <div class="layui-form-item">
+            <label class="layui-form-label">课程代号</label>
+            <div class="layui-input-block">
+                <input type="text" name="id" lay-verify="title" autocomplete="off"
+                       value="<%=(String)request.getAttribute("id")%>" class="layui-input" >
+            </div>
+        </div>
         <div class="layui-form-item">
             <label class="layui-form-label">课程名称</label>
             <div class="layui-input-block">
@@ -38,38 +45,32 @@
                        value="<%=(String)request.getAttribute("name")%>" class="layui-input">
             </div>
         </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">课程代号</label>
-            <div class="layui-input-block">
-                <input type="text" name="id" lay-verify="title" autocomplete="off"
-                       value="<%=(String)request.getAttribute("id")%>" class="layui-input" disabled="disabled">
-            </div>
-        </div>
+
         <div class="layui-form-item">
             <label class="layui-form-label">类别</label>
             <div class="layui-input-block">
-                <input type="text" name="did" lay-verify="title" autocomplete="off"
-                       value="<%=request.getAttribute("kind")%>" class="layui-input">
+                <input type="text" name="kind" lay-verify="title" autocomplete="off"
+                       value="<%=(String)request.getAttribute("kind")%>" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">学分</label>
             <div class="layui-input-block">
-                <input type="text" name="sid" lay-verify="title" autocomplete="off"
-                       value="<%=(String)request.getAttribute("credit")%>" class="layui-input">
+                <input type="text" name="credit" lay-verify="title" autocomplete="off"
+                       value="<%=request.getAttribute("credit")%>" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">考核方式</label>
             <div class="layui-input-block">
-                <input type="text" name="birth" lay-verify="title" autocomplete="off"
+                <input type="text" name="testWay" lay-verify="title" autocomplete="off"
                        value="<%=(String)request.getAttribute("testWay")%>" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">备注</label>
             <div class="layui-input-block">
-                <input type="text" name="where" lay-verify="title" autocomplete="off"
+                <input type="text" name="comment" lay-verify="title" autocomplete="off"
                        value="<%=(String)request.getAttribute("comment")%>" class="layui-input">
             </div>
         </div>

@@ -8,7 +8,7 @@ public class Course {
     private int credit;         //学分
     private int studyPeriod;    //学时
     private String comment;
-
+    public Course(){};
     public Course(String name, String id, String kind, String testWay, int credit, int studyPeriod, String comment){
         this.name = name;
         this.id = id;
@@ -17,10 +17,6 @@ public class Course {
         this.credit = credit;
         this.studyPeriod = studyPeriod;
         this.comment = comment;
-    }
-
-    public Course() {
-
     }
 
     public String getName() {

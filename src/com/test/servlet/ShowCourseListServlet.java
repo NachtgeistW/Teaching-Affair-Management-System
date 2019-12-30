@@ -1,6 +1,5 @@
 package com.test.servlet;
 
-import com.PageInfo;
 import com.test.Course;
 import com.test.Student;
 import com.test.dao.CourseDaoImpl;
@@ -22,15 +21,23 @@ public class ShowCourseListServlet extends HttpServlet {
     }
 
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
-        CourseDaoImpl impl = new CourseDaoImpl();
-        try {
-            int currentPage = 1;
-            String currentPageStr = request.getParameter("currentPage");
-            if (currentPageStr != null && !currentPageStr.trim().equals(""))
-                currentPage = Integer.parseInt(currentPageStr);
-
-            PageInfo info = impl.queryByPage(currentPage);
-            request.setAttribute("info", info);
+        int cpage = 1;//当前页
+        int count = 5;//每页显示条数
+        
+        //获取用户指定的页面
+        String cp = request.getParameter("cp");
+        if(cp!=null) {
+        	cpage = Integer.parseInt(cp);
+        }
+        
+    	CourseDaoImpl impl = new CourseDaoImpl();
+    	try {
+			int arr[] = impl.totalpage(count);
+            List<Course> list = impl.queryAllCourse(cpage,count);
+            request.setAttribute("courseList", list);
+            request.setAttribute("tsum", arr[0]);
+            request.setAttribute("tpage", arr[1]);
+            request.setAttribute("cpage", cpage);
             request.getRequestDispatcher("admin-select-course-list.jsp")
                     .forward(request, response);
         } catch (SQLException e) {

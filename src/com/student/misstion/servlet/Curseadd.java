@@ -56,6 +56,7 @@ public class Curseadd extends HttpServlet {
                 curse.setcName(s.getcName());
                 curse.setsTerm(s.getsTerm());
                 curse.setcTname(s.getcTname());
+                curse.setTeacherid(s.getTeacherid());
                 break;
             }
         }
@@ -63,7 +64,6 @@ public class Curseadd extends HttpServlet {
         curse.setcId(cid);
         curse.setcTestway(request.getParameter("ctestway"));
         curse.setComment(request.getParameter("comment"));
-        
         int a = dao.addCurse(curse);
         if(a!=0) {
 			PrintWriter out=response.getWriter();

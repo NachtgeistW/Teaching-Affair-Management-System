@@ -1,7 +1,7 @@
 package com.test.dao;
 
-import com.PageInfo;
 import com.test.Course;
+import com.test.Student;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -14,9 +14,8 @@ public interface CourseDao extends Dao {
     //按课程号删除课程
     int deleteCourse(String courseId) throws SQLException;
 
-    List<Course> queryAllCourse() throws SQLException;
-
-    Course queryByCid(String cid) throws SQLException;
-
-    PageInfo queryByPage(int currentPage) throws SQLException;
+    List<Course> queryAllCourse(int cpage,int count) throws SQLException;
+	Course queryByCid(String cid) throws SQLException;
+    
+    
 }

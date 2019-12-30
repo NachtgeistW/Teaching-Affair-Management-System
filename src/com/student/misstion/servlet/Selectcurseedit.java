@@ -1,6 +1,7 @@
 package com.student.misstion.servlet;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -44,8 +45,26 @@ public class Selectcurseedit extends HttpServlet {
         String id = (String)this.getServletContext().getAttribute("id");
         if(id == null)id = request.getParameter("sid");
         StudentcurseDao cursedao = new StudentcurseDaoImpl();
+        int cpage = 1;//当前页
+        int count = 5;//每页显示条数
+        
+        //获取用户指定的页面
+        String cp = request.getParameter("cp");
+        if(cp!=null) {
+        	cpage = Integer.parseInt(cp);
+        }
         ArrayList<Studentcurse> list = new ArrayList<Studentcurse>();
-        list = cursedao.setCurse(id);
+        list = cursedao.setCurse(id,cpage,count);
+        int arr[];
+		try {
+			arr = cursedao.getPage(count,1,id);
+			request.setAttribute("tsum", arr[0]);
+	        request.setAttribute("tpage", arr[1]);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        request.setAttribute("cpage", cpage);
         request.setAttribute("curselist", list);
         request.setAttribute("sid", id);
         request.getRequestDispatcher("stu-misstion-edit.jsp").forward(request, response);

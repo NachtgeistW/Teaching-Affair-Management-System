@@ -75,7 +75,7 @@
 				</div>
 				<div class="layui-form-item" >
 					<div align="center">
-						<a class="layui-btn" href="javascript:history.go(-1)" lay-filter="back">返回</a>
+						<a class="layui-btn" href="main.jsp" lay-filter="back">返回</a>
 					</div>
 				</div>
 			</form>
