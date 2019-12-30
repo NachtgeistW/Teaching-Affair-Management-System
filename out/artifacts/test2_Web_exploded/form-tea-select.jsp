@@ -27,36 +27,36 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">姓名</label>
 					<div class="layui-input-block">
-						<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input" disabled="disabled">
+						<input type="text" name="tname" lay-verify="title" autocomplete="off" value="<%=(String)request.getAttribute( "tname")%>" class="layui-input">
 					</div>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">教师编号</label>
 					<div class="layui-input-block">
-						<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input" disabled="disabled">
-					</div>
-				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label">院系代号</label>
-					<div class="layui-input-block">
-						<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input" disabled="disabled">
+						<input type="text" name="tid" lay-verify="title" autocomplete="off" value="<%=(String)request.getAttribute( "tid")%>" class="layui-input" readonly="readonly">
 					</div>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">职称</label>
 					<div class="layui-input-block">
-						<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input" disabled="disabled">
+						<input type="text" name="title" lay-verify="title" autocomplete="off" value="<%=(String)request.getAttribute( "title")%>" class="layui-input">
 					</div>
-				</div>		
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">院系代号</label>
+					<div class="layui-input-block">
+						<input type="text" name="did" lay-verify="title" autocomplete="off" value="<%=request.getAttribute( "did")%>" class="layui-input">
+					</div>
+				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">性别</label>
 					<div class="layui-input-block">
-						<input type="radio" name="sex" value="男" title="男" checked="" disabled="disabled">
+						<input type="radio" name="sex" value="<%=(String)request.getAttribute( "sex")%>" title="<%=(String)request.getAttribute( "sex")%>" checked="" disabled="disabled">
 					</div>
 				</div>
 				<div class="layui-form-item" >
 					<div align="center">
-						<a class="layui-btn" href="main.jsp" lay-filter="back">返回</a>
+						<a class="layui-btn" href="javascript:history.go(-1)" lay-filter="back">返回</a>
 					</div>
 				</div>
 			</form>

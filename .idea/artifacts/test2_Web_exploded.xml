@@ -8,8 +8,8 @@
           <element id="module-output" name="test2" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="mysql-connector-java-8.0.16" />
-          <element id="library" level="project" name="jstl-1.2" />
+          <element id="library" level="project" name="lib" />
+          <element id="library" level="project" name="Java EE 6-Java EE 6" />
         </element>
       </element>
     </root>

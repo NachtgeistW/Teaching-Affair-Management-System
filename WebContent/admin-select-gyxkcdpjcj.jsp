@@ -54,11 +54,11 @@
                     </div>
                     <div class="beg-table-paged">
                         <div class="list-page" align="center">
-                           	共${tsum} 条记录，当前${cpage}/${tpage} 页
-							<a href="StatisticDepartmentAvgGradeServlet?cp=1">首页</a>
-							<a href="StatisticDepartmentAvgGradeServlet?cp=${cpage-1<1?1:cpage-1}">上一页</a>
-							<a href="StatisticDepartmentAvgGradeServlet?cp=${cpage+1>tpage?tpage:cpage+1}">下一页</a>
-							<a href="StatisticDepartmentAvgGradeServlet?cp=${tpage}">尾页</a>
+                            共${tsum} 条记录，当前${cpage}/${tpage} 页
+                            <a href="StatisticDepartmentAvgGradeServlet?cp=1">首页</a>
+                            <a href="StatisticDepartmentAvgGradeServlet?cp=${cpage-1<1?1:cpage-1}">上一页</a>
+                            <a href="StatisticDepartmentAvgGradeServlet?cp=${cpage+1>tpage?tpage:cpage+1}">下一页</a>
+                            <a href="StatisticDepartmentAvgGradeServlet?cp=${tpage}">尾页</a>
                         </div>
                     </div>
                 </div>

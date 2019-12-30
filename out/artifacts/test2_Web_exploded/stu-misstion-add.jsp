@@ -24,34 +24,17 @@
 				<legend>添加--上课任务</legend>
 			</fieldset>
 
-			<form class="layui-form" action="Curseadd" onsubmit="return check(this);">
+			<form class="layui-form" action="Curseadd?sid=${sid}" onsubmit="return check(this);" method="post">
 				<div class="layui-form-item">
 					<label class="layui-form-label">课程名称</label>
 					<select id="test" name="cid" >
 						<c:forEach var="u" items="${curseidlist}">
 						
-							<option value="${u.cId }">${u.cName }-${u.cTname}</option>
+							<option value="${u.cId },${u.cTname}">${u.cName }-教师：${u.cTname}-修课时间：${u.sTerm}</option>
 							
 						</c:forEach>
 						
 					</select>
-				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label">教师姓名</label>
-					<select id="test" name="cTname" >
-						<c:forEach var="u" items="${curseidlist}">
-						
-							<option value="${u.cTname }">${u.cTname}</option>
-							
-						</c:forEach>
-						
-					</select>
-				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label">修课时间</label>
-					<div class="layui-input-block">
-						<input type="text" name="sterm" lay-verify="title" autocomplete="off" value="2019-2020-2" class="layui-input">
-					</div>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">考核方式</label>
@@ -69,6 +52,7 @@
 					<div class="layui-input-block">
 						<button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
 						<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+						<a class="layui-btn" href="javascript:history.go(-1)" lay-filter="back">返回</a>
 					</div>
 				</div>
 			</form>

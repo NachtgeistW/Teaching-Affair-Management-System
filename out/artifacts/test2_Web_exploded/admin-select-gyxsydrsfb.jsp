@@ -22,7 +22,7 @@
     <fieldset class="layui-elem-field">
         <div class="layui-field-box">
             <div align="right">
-                <a class="layui-btn layui-btn-xs" href="main.jsp" lay-filter="back">返回</a>
+                <a class="layui-btn layui-btn-xs" href="javascript:history.go(-1)" lay-filter="back">返回</a>
             </div>
             <div id="xx" style=" width: 1024px; height: 450px; ; border: 1px solid #DDDDDD;">
                 <div class="beg-table-box">

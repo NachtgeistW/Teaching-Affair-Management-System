@@ -22,7 +22,7 @@
     <fieldset class="layui-elem-field">
         <div class="layui-field-box">
             <div align="right">
-            	<a class="layui-btn layui-btn-primary layui-btn-xs" href="">
+            	<a class="layui-btn layui-btn-primary layui-btn-xs" href="CourseAddServlet">
                     <i class="layui-icon">&#xe61f;</i>添加
                 </a>
                 <a class="layui-btn layui-btn-xs" href="javascript:history.go(-1)" lay-filter="back">返回</a>
@@ -62,6 +62,10 @@
                                             <a class="layui-btn layui-btn-primary layui-btn-xs"
                                                href="EditCourseServlet?cid=${course.getId()}">
                                                 <i class="layui-icon">&#xe642;</i>修改课程信息
+                                            </a>
+                                            <a class="layui-btn layui-btn-primary layui-btn-xs"
+                                               href="CourseDeleteServlet?cid=${course.getId()}">
+                                                <i class="layui-icon">&#xe640;</i>删除课程
                                             </a>
                                         </td>
                                     </tr>

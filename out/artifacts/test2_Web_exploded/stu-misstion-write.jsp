@@ -45,7 +45,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">修课时间</label>
 					<div class="layui-input-block">
-						<input type="text" name="sterm" lay-verify="title" autocomplete="off" value="<%= (String)request.getAttribute( "sterm")%>" class="layui-input">
+						<input type="text" name="sterm" lay-verify="title" autocomplete="off" value="<%= (String)request.getAttribute( "sterm")%>" class="layui-input"readonly="readonly">
 					</div>
 				</div>
 				<div class="layui-form-item">
@@ -64,6 +64,7 @@
 					<div class="layui-input-block">
 						<button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
 						<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+						<a class="layui-btn" href="javascript:history.go(-1)" lay-filter="back">返回</a>
 					</div>
 				</div>
 			</form>

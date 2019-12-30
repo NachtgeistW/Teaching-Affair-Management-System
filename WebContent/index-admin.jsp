@@ -41,7 +41,9 @@
                     <dl class="layui-nav-child">
 
                         <dd>
-                            <a href="LogoutServlet"><i class="fa fa-sign-out" aria-hidden="true"><script language='javascript'>history.go(1);</script></i> 注销</a>
+                            <a href="LogoutServlet"><i class="fa fa-sign-out" aria-hidden="true">
+                                <script language='javascript'>history.go(1);</script>
+                            </i> 注销</a>
                         </dd>
                     </dl>
                 </li>
@@ -76,7 +78,7 @@
                             <dd><a href="StatisticDepartmentSexServlet" target="i">各院系按性别人数分布</a></dd>
                             <dd><a href="StatisticDepartmentAvgGradeServlet" target="i">各院系课程的平均成绩</a></dd>
                             <dd><a href="StatisticDepartmentNoPassListServlet" target="i">各院系不及格名单</a></dd>
-<%--                            <dd><a href="StatisticSexAvgGradeServlet" target="i">按性别统计课程平均成绩</a></dd>--%>
+                            <%--                            <dd><a href="StatisticSexAvgGradeServlet" target="i">按性别统计课程平均成绩</a></dd>--%>
                         </dl>
                     </dd>
                     </dd>

@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class ConnectionUtil {
     private static String url = "jdbc:mysql://127.0.0.1:3306/webstore?useSSL=false&serverTimezone=UTC";
     private static String rootName = "root";
-    private static String rootPwd = "HTTYD32019mysql";
+    private static String rootPwd = "123456";
     
     private ConnectionUtil() {};
     

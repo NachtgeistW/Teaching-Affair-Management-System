@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: 56223
-  Date: 2019/12/29
-  Time: 19:01
+  Date: 2019/12/30
+  Time: 16:18
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
@@ -27,10 +27,10 @@
 <body>
 <div style="margin: 15px;">
     <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
-        <legend>修改--课程信息</legend>
+        <legend>添加--课程信息</legend>
     </fieldset>
 
-    <form class="layui-form" action="EditCourseSubmitServlet">
+    <form class="layui-form" action="CourseAddSubmitServlet">
         <div class="layui-form-item">
             <label class="layui-form-label">课程代号</label>
             <div class="layui-input-block">
@@ -61,9 +61,23 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">学时</label>
+            <div class="layui-input-block">
+                <input type="text" name="studyPeriod" lay-verify="title" autocomplete="off"
+                       value="<%=(String)request.getAttribute("studyPeriod")%>" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
             <label class="layui-form-label">考核方式</label>
             <div class="layui-input-block">
                 <input type="text" name="testWay" lay-verify="title" autocomplete="off"
+                       value="<%=(String)request.getAttribute("testWay")%>" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">教师编号</label>
+            <div class="layui-input-block">
+                <input type="text" name="tteacherid" lay-verify="title" autocomplete="off"
                        value="<%=(String)request.getAttribute("testWay")%>" class="layui-input">
             </div>
         </div>

@@ -23,29 +23,30 @@
 				<legend>修改--授课信息</legend>
 			</fieldset>
 
-			<form class="layui-form" action="">
+			<form class="layui-form" action="Teachercurseeditsubmit">
 				<div class="layui-form-item">
 					<label class="layui-form-label">课程代号</label>
 					<div class="layui-input-block">
-						<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入课程代号" class="layui-input">
+						<input type="text" name="cid" lay-verify="title" autocomplete="off" value="<%=(String)request.getAttribute("cid") %>" class="layui-input" readonly="readonly">
 					</div>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">课程名称</label>
 					<div class="layui-input-block">
-						<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入课程名称" class="layui-input">
+						<input type="text" name="cname" lay-verify="title" autocomplete="off" value="<%=(String)request.getAttribute("cname") %>" class="layui-input" readonly="readonly">
 					</div>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">授课时间</label>
 					<div class="layui-input-block">
-						<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入授课老师" class="layui-input">
+						<input type="text" name="cterm" lay-verify="title" autocomplete="off" value="<%=(String)request.getAttribute("cterm") %>" class="layui-input">
 					</div>
 				</div>
 				<div class="layui-form-item">
 					<div class="layui-input-block">
 						<button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
 						<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+						<a class="layui-btn" href="javascript:history.go(-1)" lay-filter="back">返回</a>
 					</div>
 				</div>
 			</form>

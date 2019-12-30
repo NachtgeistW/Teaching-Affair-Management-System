@@ -14,7 +14,7 @@ import java.util.List;
 public class CourseDaoImpl implements CourseDao {
     @Override
     public int addCourse(Course course) throws SQLException {
-        String sql = "INSERT INTO course_info values (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO course_info values (?, ?, ?, ?, ?, ?, ?,?)";
         try{
             Connection conn = getConnection();
             PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -25,6 +25,7 @@ public class CourseDaoImpl implements CourseDao {
             pstmt.setInt(5, course.getCredit());
             pstmt.setInt(6, course.getStudyPeriod());
             pstmt.setString(7, course.getComment());
+            pstmt.setString(8, course.getTteacherid());
             int i = pstmt.executeUpdate();
             conn.close();
             return i;
@@ -84,7 +85,7 @@ public class CourseDaoImpl implements CourseDao {
             course = new Course(res.getString("cname"), res.getString("cid"),
                     res.getString("ckind"), res.getString("ctestway"),
                     res.getInt("ccredit"), res.getInt("cstudyperiod"),
-                    res.getString("comment"));
+                    res.getString("comment"),res.getString("tteacherid"));
         }
         return course;
     }
@@ -104,7 +105,7 @@ public class CourseDaoImpl implements CourseDao {
             course = new Course(res.getString("cname"), res.getString("cid"),
                     res.getString("ckind"), res.getString("ctestway"),
                     res.getInt("ccredit"), res.getInt("cstudyperiod"),
-                    res.getString("comment"));
+                    res.getString("comment"),res.getString("tteacherid"));
             list.add(course);
         }
         conn.close();

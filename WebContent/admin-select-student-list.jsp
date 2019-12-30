@@ -50,16 +50,20 @@
                                         <td>${student.getName()}</td>
                                         <td>${student.getDepartment()}</td>
                                         <td align="right">
-                                            <a class="layui-btn layui-btn-primary layui-btn-xs" href="Selectperson?sid=${student.getStudentId()}">
+                                            <a class="layui-btn layui-btn-primary layui-btn-xs"
+                                               href="Selectperson?sid=${student.getStudentId()}">
                                                 <i class="layui-icon">&#xe615;</i>查看个人信息
                                             </a>
-                                            <a class="layui-btn layui-btn-primary layui-btn-xs" href="Selectcurse?sid=${student.getStudentId()}">
+                                            <a class="layui-btn layui-btn-primary layui-btn-xs"
+                                               href="Selectcurse?sid=${student.getStudentId()}">
                                                 <i class="layui-icon">&#xe615;</i>查看上课任务
                                             </a>
-                                            <a class="layui-btn layui-btn-primary layui-btn-xs" href="Selectpersonedit?sid=${student.getStudentId()}">
+                                            <a class="layui-btn layui-btn-primary layui-btn-xs"
+                                               href="Selectpersonedit?sid=${student.getStudentId()}">
                                                 <i class="layui-icon">&#xe642;</i>修改个人信息
                                             </a>
-                                            <a class="layui-btn layui-btn-primary layui-btn-xs" href="Selectcurseedit?sid=${student.getStudentId()}">
+                                            <a class="layui-btn layui-btn-primary layui-btn-xs"
+                                               href="Selectcurseedit?sid=${student.getStudentId()}">
                                                 <i class="layui-icon">&#xe642;</i>修改上课任务
                                             </a>
                                         </td>
@@ -71,11 +75,11 @@
                     </div>
                     <div class="beg-table-paged">
                         <div class="list-page" align="center">
-                          	 共${tsum} 条记录，当前${cpage}/${tpage} 页
-							<a href="ShowStudentListServlet?cp=1">首页</a>
-							<a href="ShowStudentListServlet?cp=${cpage-1<1?1:cpage-1}">上一页</a>
-							<a href="ShowStudentListServlet?cp=${cpage+1>tpage?tpage:cpage+1}">下一页</a>
-							<a href="ShowStudentListServlet?cp=${tpage}">尾页</a>
+                            共${tsum} 条记录，当前${cpage}/${tpage} 页
+                            <a href="ShowStudentListServlet?cp=1">首页</a>
+                            <a href="ShowStudentListServlet?cp=${cpage-1<1?1:cpage-1}">上一页</a>
+                            <a href="ShowStudentListServlet?cp=${cpage+1>tpage?tpage:cpage+1}">下一页</a>
+                            <a href="ShowStudentListServlet?cp=${tpage}">尾页</a>
                         </div>
                     </div>
                 </div>
