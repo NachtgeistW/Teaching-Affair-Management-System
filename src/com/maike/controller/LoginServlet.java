@@ -19,18 +19,20 @@ import java.io.PrintWriter;
 public class LoginServlet extends HttpServlet {
     UserService userService = new UserServiceImpl();
     private static final long serialVersionUID = 1L;
-
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
     public LoginServlet() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // TODO Auto-generated method stub
         response.getWriter().append("Served at: ").append(request.getContextPath());
     }
 
@@ -38,36 +40,37 @@ public class LoginServlet extends HttpServlet {
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // TODO Auto-generated method stub
         request.setCharacterEncoding("utf-8");
-        response.setContentType("text/html;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
         String userName = request.getParameter("userName");
         String uesrPwd = request.getParameter("userPwd");
         HttpSession session = request.getSession();
-        int k = userService.judgeLogin(userName, uesrPwd);
-        PrintWriter out = response.getWriter();
-        out.write("<script>");
-
-        //做登录用户的判断
-        if (k == 1) {
-            session.setAttribute("pass", "1");
-            out.write("window.location.href='index-admin.jsp';");
-        }
-        if (k == 2) {
-            session.setAttribute("pass", "1");
-            this.getServletContext().setAttribute("id", userName);
-            out.write("window.location.href='index-teacher.jsp';");
-        }
-        if (k == 3) {
-            session.setAttribute("pass", "1");
-            this.getServletContext().setAttribute("id", userName);
-            out.write("window.location.href='index-student.jsp';");
-        }
-        if (k == 0) {
-            out.write("alert('登录失败！请重新输入！');");
-            out.write("window.location.href='login.html';");
-        }
-        out.write("</script>");
-        out.close();
+        int k = userService.judgeLogin(userName,uesrPwd);
+        
+				PrintWriter out=response.getWriter();
+				out.write("<script>");
+				
+            if(k == 1) {
+            	session.setAttribute("pass", "1");
+            	out.write("window.location.href='index-admin.jsp';");
+            }
+            if(k == 2) {
+            	session.setAttribute("pass", "1");
+            	this.getServletContext().setAttribute("id", userName);
+            	out.write("window.location.href='index-teacher.jsp';");
+            }
+            if(k == 3) {
+            	session.setAttribute("pass", "1");
+            	this.getServletContext().setAttribute("id", userName);
+            	out.write("window.location.href='index-student.jsp';");
+            }
+            if(k == 0) {
+            	out.write("alert('登录失败！请重新输入！');");
+            	out.write("window.location.href='login.jsp';");
+            }
+            out.write("</script>");
+            out.close();
     }
 
 }

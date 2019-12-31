@@ -24,7 +24,7 @@
 				<legend>添加--授课信息</legend>
 			</fieldset>
 
-			<form class="layui-form" action="Teacheraddcursesubmit">
+			<form class="layui-form" action="Teacheraddcursesubmit?tid=${tid }" method="post">
 				<div class="layui-form-item">
 					<label class="layui-form-label">课程名称</label>
 					<select id="test" name="cid" >
@@ -39,7 +39,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">授课时间</label>
 					<div class="layui-input-block">
-						<input type="text" name="cterm" lay-verify="title" autocomplete="off" placeholder="2011-2012-1" class="layui-input">
+						<input type="text" name="cterm" lay-verify="title" autocomplete="off" placeholder="2011-2012-1" class="layui-input" value="2011-2012-1">
 					</div>
 				</div>
 				<div class="layui-form-item">

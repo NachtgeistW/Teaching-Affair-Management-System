@@ -19,8 +19,8 @@ import com.test.TeacherQuery;
  */
 @WebServlet("/Teachercurseeditshow")
 public class Teachercurseeditshow extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-
+	private static final long serialVersionUID = 1L;
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -29,29 +29,30 @@ public class Teachercurseeditshow extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-    /**
-     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-     */
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
-    }
+		doPost(request, response);
+	}
 
-    /**
-     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-     */
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("utf-8");
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
-        String id = (String) this.getServletContext().getAttribute("id");
-        if (id == null) id = request.getParameter("tid");
-        TeacherQuery curse = new TeacherQuery();
-        TeacherDao dao = new TeacherImpl();
-        String cid = request.getParameter("cid");
-        curse = dao.getCurse(cid, id);
-        request.setAttribute("cname", curse.getCname());
-        request.setAttribute("cid", curse.getCid());
-        request.setAttribute("cterm", curse.getCterm());
-        request.getRequestDispatcher("tea-misstion-write.jsp").forward(request, response);
-    }
+        String id = (String)this.getServletContext().getAttribute("id");
+        if(id == null)id = request.getParameter("tid");
+        
+		TeacherQuery curse = new TeacherQuery();
+		TeacherDao dao = new TeacherImpl();
+		String cid = request.getParameter("cid");
+		curse = dao.getCurse(cid, id);
+		request.setAttribute("cname",curse.getCname());
+		request.setAttribute("cid",curse.getCid());
+		request.setAttribute("cterm", curse.getCterm());
+		request.getRequestDispatcher("tea-misstion-write.jsp").forward(request, response);
+	}
 
 }

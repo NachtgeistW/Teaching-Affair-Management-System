@@ -23,7 +23,7 @@
         <legend>修改--个人信息</legend>
     </fieldset>
 
-    <form class="layui-form" action="editsubmit">
+    <form class="layui-form" action="editsubmit?sid=${id }" method="post">
         <div class="layui-form-item">
             <label class="layui-form-label">姓名</label>
             <div class="layui-input-block">

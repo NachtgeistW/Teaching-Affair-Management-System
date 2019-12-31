@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+         pageEncoding="utf-8" %>
 <!DOCTYPE html>
 <html>
 
@@ -38,7 +40,7 @@
                     <button class="layui-btn layui-btn-primary" lay-submit lay-filter="login">
                         <i class="layui-icon">&#xe650;</i> 登录
                     </button>
-                    <a class="layui-btn-normal " href="insert.html">注册</a>
+                    <a class="layui-btn-normal " href="insert.jsp">注册</a>
                 </div>
                 <div class="beg-clear"></div>
             </div>
@@ -58,12 +60,12 @@
 </script>
 <script type="text/javascript">
     function check(obj) {
-        if (obj.userName.value == "") {
+        if (obj.userName.value === "") {
             alert("请输入用户名！");
             obj.userName.focus();
             return false;
         }
-        if (obj.userPwd.value == "") {
+        if (obj.userPwd.value === "") {
             alert("请输入密码！");
             obj.userPwd.focus();
             return false;

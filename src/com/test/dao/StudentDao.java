@@ -18,5 +18,5 @@ public interface StudentDao extends Dao {
 
     Student querySingleStudent(String userName) throws SQLException;
 
-    List<Student> queryAllStudent(int cpage, int count) throws SQLException;
+    List<Student> queryAllStudent(int cpage,int count) throws SQLException;
 }

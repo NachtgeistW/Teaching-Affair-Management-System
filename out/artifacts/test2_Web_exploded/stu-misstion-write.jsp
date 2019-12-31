@@ -23,7 +23,7 @@
 				<legend>修改--上课任务</legend>
 			</fieldset>
 
-			<form class="layui-form" action="Curseeditsubmit">
+			<form class="layui-form" action="Curseeditsubmit?sid=${sid}" method="post">
 				<div class="layui-form-item">
 					<label class="layui-form-label">课程代号</label>
 					<div class="layui-input-block">

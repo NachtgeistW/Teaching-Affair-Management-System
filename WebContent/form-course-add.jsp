@@ -7,6 +7,7 @@
 --%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
          pageEncoding="utf-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 
@@ -77,8 +78,11 @@
         <div class="layui-form-item">
             <label class="layui-form-label">教师编号</label>
             <div class="layui-input-block">
-                <input type="text" name="tteacherid" lay-verify="title" autocomplete="off"
-                       value="<%=(String)request.getAttribute("testWay")%>" class="layui-input">
+                <select id="test" name="tteacherid">
+                    <c:forEach var="u" items="${teacherList}">
+                        <option value="${u.teacherId }">${u.teacherId }-教师：${u.name}</option>
+                    </c:forEach>
+                </select>
             </div>
         </div>
         <div class="layui-form-item">

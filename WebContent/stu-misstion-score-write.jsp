@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
          pageEncoding="utf-8" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <title>添加</title>
+    <title>成绩修改</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -21,28 +20,32 @@
 <body>
 <div style="margin: 15px;">
     <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
-        <legend>添加--授课信息</legend>
+        <legend>学生--成绩修改</legend>
     </fieldset>
 
-    <form class="layui-form" action="Teacheraddcursesubmit?tid=${tid }" method="post">
+    <form class="layui-form" action="StudentCourseServletEditSubmit?sid=${sid }&cid=${cid }" method="post">
         <div class="layui-form-item">
-            <label class="layui-form-label">课程名称</label>
-            <select id="test" name="cid">
-                <c:forEach var="u" items="${curseidlist}">
-
-                    <option value="${u.cid }">${u.cid }-${u.cname }</option>
-
-                </c:forEach>
-
-            </select>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">授课时间</label>
+            <label class="layui-form-label">课程编号</label>
             <div class="layui-input-block">
-                <input type="text" name="cterm" lay-verify="title" autocomplete="off" placeholder="2011-2012-1"
-                       class="layui-input" value="2011-2012-1">
+                <input type="text" name="cid" lay-verify="title" autocomplete="off" value="${cid }" class="layui-input"
+                       disabled="disabled">
             </div>
         </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">课程名称</label>
+            <div class="layui-input-block">
+                <input type="text" name="cname" lay-verify="title" autocomplete="off" value="${cname }"
+                       class="layui-input" disabled="disabled">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">分数</label>
+            <div class="layui-input-block">
+                <input type="text" name="score" lay-verify="title" autocomplete="off" value="${score }"
+                       class="layui-input">
+            </div>
+        </div>
+
         <div class="layui-form-item">
             <div class="layui-input-block">
                 <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
@@ -56,8 +59,6 @@
 <script>
     layui.use(['form', 'layedit', 'laydate'], function () {
         var form = layui.form();
-
-
     });
 </script>
 </body>

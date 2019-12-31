@@ -50,7 +50,7 @@
 							     <td>${u.getCid()}</td>
 							      <td>${u.getCname()}</td>
 							      <td>${u.getCterm()}</td>
-							      <td>
+							      <td align="right">
 							       <a class="layui-btn layui-btn-primary layui-btn-xs" href="Teachercurseeditshow?cid=${u.getCid()}&tid=${tid }">
 								      	<i class="layui-icon">&#xe642;</i>修改
 								      </a>

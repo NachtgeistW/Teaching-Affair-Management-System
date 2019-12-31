@@ -1,6 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "
-http://www.w3.org/TR/html4/loose.dtd
-">
+<%@ page language="java" contentType="text/html; charset=utf-8"
+         pageEncoding="utf-8" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
 <head>
@@ -55,7 +55,7 @@ http://www.w3.org/TR/html4/loose.dtd
                 <input class="layui-btn layui-btn-primary" type="submit" value="注册">
 
             </div>
-            <a href="login.html" lay-filter="back">已有账号？立即登录</a>
+            <a href="login.jsp" lay-filter="back">已有账号？立即登录</a>
             <div class="beg-clear">
                 <footer>
                     <p align="center">WYU © </p>

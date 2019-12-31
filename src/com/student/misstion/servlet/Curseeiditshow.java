@@ -19,8 +19,8 @@ import com.student.select.service.StudentcurseDaoImpl;
  */
 @WebServlet("/Curseeiditshow")
 public class Curseeiditshow extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-
+	private static final long serialVersionUID = 1L;
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -29,34 +29,36 @@ public class Curseeiditshow extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-    /**
-     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-     */
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
-    }
+		doPost(request, response);
+	}
 
-    /**
-     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-     */
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("utf-8");
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
-        String id = (String) this.getServletContext().getAttribute("id");
-        if (id == null) id = request.getParameter("sid");
-        Studentcurse curse = new Studentcurse();
-        StudentcurseDao dao = new StudentcurseDaoImpl();
-        String cid = request.getParameter("cid");
-        curse = dao.getCurse(cid, id);
-        request.setAttribute("cname", curse.getcName());
-        request.setAttribute("cid", curse.getcId());
-        request.setAttribute("ctname", curse.getcTname());
-        request.setAttribute("sterm", curse.getsTerm());
-        request.setAttribute("ctestway", curse.getcTestway());
-        request.setAttribute("comment", curse.getComment());
-
-
-        request.getRequestDispatcher("stu-misstion-write.jsp").forward(request, response);
-    }
+        String id = (String)this.getServletContext().getAttribute("id");
+        if(id == null)id = request.getParameter("sid");
+		Studentcurse curse = new Studentcurse();
+		StudentcurseDao dao = new StudentcurseDaoImpl();
+		String cid = request.getParameter("cid");
+		curse = dao.getCurse(cid, id);
+		request.setAttribute("sid", id);
+		System.out.println(id+"1");
+		request.setAttribute("cname",curse.getcName());
+		request.setAttribute("cid",curse.getcId());
+		request.setAttribute("ctname", curse.getcTname());
+		request.setAttribute("sterm", curse.getsTerm());
+		request.setAttribute("ctestway",curse.getcTestway());
+		request.setAttribute("comment", curse.getComment());
+		
+		
+		request.getRequestDispatcher("stu-misstion-write.jsp").forward(request, response);
+	}
 
 }

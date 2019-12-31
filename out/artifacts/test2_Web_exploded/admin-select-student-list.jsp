@@ -54,13 +54,16 @@
                                                 <i class="layui-icon">&#xe615;</i>查看个人信息
                                             </a>
                                             <a class="layui-btn layui-btn-primary layui-btn-xs" href="Selectcurse?sid=${student.getStudentId()}">
-                                                <i class="layui-icon">&#xe615;</i>查看上课任务
+                                                <i class="layui-icon">&#xe615;</i>查看课程信息
                                             </a>
                                             <a class="layui-btn layui-btn-primary layui-btn-xs" href="Selectpersonedit?sid=${student.getStudentId()}">
                                                 <i class="layui-icon">&#xe642;</i>修改个人信息
                                             </a>
-                                            <a class="layui-btn layui-btn-primary layui-btn-xs" href="Selectcurseedit?sid=${student.getStudentId()}">
-                                                <i class="layui-icon">&#xe642;</i>修改上课任务
+                                            <a class="layui-btn layui-btn-primary layui-btn-xs" href="Selectcurseedit?sid=${student.getStudentId()}&num=1">
+                                                <i class="layui-icon">&#xe642;</i>修改课程信息
+                                            </a>
+                                            <a class="layui-btn layui-btn-primary layui-btn-xs" href="Selectcurseedit?sid=${student.getStudentId()}&num=2">
+                                                <i class="layui-icon">&#xe642;</i>成绩
                                             </a>
                                         </td>
                                     </tr>

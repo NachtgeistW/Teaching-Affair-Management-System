@@ -1,13 +1,14 @@
 package com.maike.model;
 
 public class User {
-
-
+    
+    
     private String userName;
-
+    
     private String userPwd;
-
+    
     private String userIdentity;
+
 
 
     public String getUserName() {
@@ -31,12 +32,12 @@ public class User {
         return "User [ userName=" + userName + ", userPwd=" + userPwd + ",userIdentity=" + userIdentity + "]";
     }
 
-    public String getUserIdentity() {
-        return userIdentity;
-    }
+	public String getUserIdentity() {
+		return userIdentity;
+	}
 
-    public void setUserIdentity(String userIdentity) {
-        this.userIdentity = userIdentity;
-    }
+	public void setUserIdentity(String userIdentity) {
+		this.userIdentity = userIdentity;
+	}
 
 }

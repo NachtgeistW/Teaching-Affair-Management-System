@@ -21,8 +21,8 @@ import com.test.TeacherQuery;
  */
 @WebServlet("/Teachercurseeditsubmit")
 public class Teachercurseeditsubmit extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-
+	private static final long serialVersionUID = 1L;
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -31,43 +31,43 @@ public class Teachercurseeditsubmit extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-    /**
-     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-     */
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
-    }
+		doPost(request, response);
+	}
 
-    /**
-     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-     */
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("utf-8");
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
         TeacherQuery curse = new TeacherQuery();
-        String id = (String) this.getServletContext().getAttribute("id");
-        curse.setCid(request.getParameter("cid"));
-        curse.setCname(request.getParameter("cname"));
-        curse.setCterm(request.getParameter("cterm"));
-        System.out.println(curse.getCid() + curse.getCname() + curse.getCterm());
+		String id = (String)this.getServletContext().getAttribute("id");
+		curse.setCid(request.getParameter("cid"));
+		curse.setCname(request.getParameter("cname"));
+		curse.setCterm(request.getParameter("cterm"));
         TeacherDao dao = new TeacherImpl();
-        int a = dao.teacherCurseUpdate(curse);
-        if (a != 0) {
-            PrintWriter out = response.getWriter();
-            out.write("<script>");
-            out.write("alert('修改成功！');");
-            out.write("window.location.href='Teacherselectcurselist';");
-            out.write("</script>");
-            out.close();
-        } else {
-            request.setAttribute("cid", curse.getCid());
-            PrintWriter out = response.getWriter();
-            out.write("<script>");
-            out.write("alert('修改失败！请重新输入！');");
-            out.write("window.location.href='Teachercurseeditshow';");
-            out.write("</script>");
-            out.close();
-        }
-    }
+		int a = dao.teacherCurseUpdate(curse);	
+		if(a!=0) {
+			PrintWriter out=response.getWriter();
+			out.write("<script>");
+        	out.write("alert('修改成功！');");
+        	out.write("window.location.href='Teacherselectcurselist';");
+	        out.write("</script>");
+	        out.close();
+		}
+		else {
+			request.setAttribute("cid", curse.getCid());
+			PrintWriter out=response.getWriter();
+			out.write("<script>");
+        	out.write("alert('修改失败！请重新输入！');");
+        	out.write("window.location.href='Teachercurseeditshow';");
+	        out.write("</script>");
+	        out.close();
+		}
+	}
 
 }

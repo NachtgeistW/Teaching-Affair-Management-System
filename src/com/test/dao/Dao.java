@@ -8,23 +8,23 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public interface Dao {
-    public static DataSource getDataSource() {
+    public static DataSource getDataSource(){
         DataSource dataSource = null;
-        try {
+        try{
             Context context = new InitialContext();
-            dataSource = (DataSource) context.lookup("java:comp/env/jdbc/webstoreDS");
+            dataSource = (DataSource)context.lookup("java:comp/env/jdbc/webstoreDS");
         } catch (NamingException e) {
             e.printStackTrace();
         }
         return dataSource;
     }
 
-    public default Connection getConnection() throws SQLException {
+    public default Connection getConnection() throws SQLException{
         DataSource dataSource = getDataSource();
         Connection connection = null;
-        try {
+        try{
             connection = dataSource.getConnection();
-        } catch (SQLException e) {
+        }catch (SQLException e){
             e.printStackTrace();
         }
         return connection;
